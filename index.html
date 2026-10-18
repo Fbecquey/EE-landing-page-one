@@ -653,7 +653,84 @@ hr.divider{border:none;height:1px;background:var(--border);margin:0;}
   </div>
 </section>
 
-<hr class="divider">
+<!-- ═══ ENERGY FIELD DIVIDER ══════════════════════════════════════════════ -->
+<div style="position:relative;width:100%;height:320px;overflow:hidden;background:var(--bg);">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#4ADE80" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#86EFAC" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#86EFAC" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="blur1"><feGaussianBlur stdDeviation="3"/></filter>
+      <filter id="blur2"><feGaussianBlur stdDeviation="1.5"/></filter>
+    </defs>
+
+    <!-- Glow orbs -->
+    <ellipse cx="600" cy="160" rx="500" ry="140" fill="url(#glow1)">
+      <animate attributeName="rx" values="500;420;500" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="140;180;140" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.6;1" dur="8s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="300" cy="160" rx="220" ry="80" fill="url(#glow2)">
+      <animate attributeName="cx" values="300;420;300" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="11s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="900" cy="160" rx="200" ry="70" fill="url(#glow2)">
+      <animate attributeName="cx" values="900;780;900" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="13s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Flowing lines -->
+    <path d="M-100,160 Q200,80 500,160 Q800,240 1100,160 Q1300,100 1400,140" fill="none" stroke="#4ADE80" stroke-width="1" stroke-opacity="0.35" filter="url(#blur2)">
+      <animate attributeName="d" values="M-100,160 Q200,80 500,160 Q800,240 1100,160 Q1300,100 1400,140;M-100,180 Q200,120 500,140 Q800,200 1100,180 Q1300,140 1400,160;M-100,160 Q200,80 500,160 Q800,240 1100,160 Q1300,100 1400,140" dur="9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-100,200 Q300,120 600,200 Q900,270 1200,190 Q1350,150 1400,170" fill="none" stroke="#4ADE80" stroke-width="0.8" stroke-opacity="0.25" filter="url(#blur2)">
+      <animate attributeName="d" values="M-100,200 Q300,120 600,200 Q900,270 1200,190 Q1350,150 1400,170;M-100,170 Q300,200 600,160 Q900,120 1200,200 Q1350,220 1400,190;M-100,200 Q300,120 600,200 Q900,270 1200,190 Q1350,150 1400,170" dur="12s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-100,130 Q250,200 550,130 Q850,60 1150,140 Q1320,180 1400,150" fill="none" stroke="#86EFAC" stroke-width="0.6" stroke-opacity="0.2" filter="url(#blur2)">
+      <animate attributeName="d" values="M-100,130 Q250,200 550,130 Q850,60 1150,140 Q1320,180 1400,150;M-100,150 Q250,80 550,160 Q850,220 1150,120 Q1320,90 1400,130;M-100,130 Q250,200 550,130 Q850,60 1150,140 Q1320,180 1400,150" dur="15s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Particles -->
+    <circle cx="200" cy="160" r="2" fill="#4ADE80" opacity="0.6" filter="url(#blur1)">
+      <animate attributeName="cx" values="200;1000;200" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="160;120;160" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="100" r="1.5" fill="#86EFAC" opacity="0.5" filter="url(#blur1)">
+      <animate attributeName="cx" values="600;100;600" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;200;100" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="200" r="2" fill="#4ADE80" opacity="0.4" filter="url(#blur1)">
+      <animate attributeName="cx" values="900;400;900" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="200;140;200" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="220" r="1" fill="#86EFAC" opacity="0.5">
+      <animate attributeName="cx" values="400;800;400" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="16s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Fade edges -->
+    <rect x="0" y="0" width="1200" height="60" fill="url(#fadeTop)"/>
+    <rect x="0" y="260" width="1200" height="60" fill="url(#fadeBottom)"/>
+    <defs>
+      <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#061A0E" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#061A0E" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="fadeBottom" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#061A0E" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#061A0E" stop-opacity="1"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
 
 <!-- ═══ QUANTUM / NATURE ══════════════════════════════════════════════════ -->
 <section class="band band--dark">

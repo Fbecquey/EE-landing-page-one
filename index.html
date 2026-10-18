@@ -500,6 +500,28 @@ hr.divider{border:none;height:1px;background:var(--border);margin:0;}
   letter-spacing:.06em;color:var(--lime);margin-bottom:10px;
 }
 .footer-disc{font-size:12px;color:var(--dim);max-width:500px;margin:0 auto;line-height:1.65;}
+.footer-hdrb{
+  margin-top:28px;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+.footer-hdrb-addr{font-size:12px;color:var(--dim);line-height:1.7;}
+.footer-hdrb-addr strong{color:var(--lime);font-weight:600;display:block;margin-bottom:2px;}
+.footer-hdrb-legal{font-size:12px;color:var(--dim);line-height:1.7;max-width:320px;}
+.footer-hdrb-legal a{color:var(--lime);text-decoration:underline;}
+@media(max-width:520px){
+  .footer-hdrb{flex-direction:column;}
+  .footer-hdrb-legal{max-width:100%;}
+}
 
 @media(max-width:480px){
   .band{padding:48px 0;}
@@ -939,5 +961,16 @@ hr.divider{border:none;height:1px;background:var(--border);margin:0;}
       earthenergetics.org &nbsp;·&nbsp; UB Health Studio<br><br>
       The information on this page is for general purposes only and does not constitute medical or financial advice. Individual results vary.
     </p>
+    <div class="footer-hdrb">
+      <div class="footer-hdrb-addr">
+        <strong>HDRB Publishing</strong>
+        3732 Fishcreek Road, #262, Stow<br>
+        Ohio, United States of America
+      </div>
+      <div class="footer-hdrb-legal">
+        You received this email because you were on our newsletter mailing list or made a purchase from us.<br>
+        <a href="https://www.hdrbpublishing.com/unsubscribe">Unsubscribe</a>
+      </div>
+    </div>
   </div>
 </footer>
